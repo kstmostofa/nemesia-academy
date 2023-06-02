@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
+	<title>Nemesia Academy</title>
+	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="css/lightbox.css">
+	<link rel="stylesheet" type="text/css" href="css/flexslider.css">
+	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="css/owl.theme.default.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.rateyo.css" />
+	<link rel="stylesheet" type="text/css" href="inner-page-style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
+	<style>
+		.banner #owl-four-nav {
+			position: absolute;
+			top: 42% !important;
+			width: 100%;
+			left: 0;
+			z-index: 9;
+			justify-content: space-between !important;
+		}
+
+		.banner .owl-nav .owl-prev,
+		.banner .owl-nav .owl-next {
+			color: rgb(233, 239, 240);
+			font-size: 5rem !important;
+		}
+
+		.accordion {
+			background-color: #eee;
+			color: #444;
+			cursor: pointer;
+			padding: 18px;
+			width: 100%;
+			border: none;
+			text-align: left;
+			outline: none;
+			font-size: 15px;
+			transition: 0.4s;
+		}
+
+		.active,
+		.accordion:hover {
+			background-color: #ccc;
+		}
+		.menu-list :hover{
+			background-color: grey;
+		}
+
+		.accordion:after {
+			content: '\002B';
+			color: #777;
+			font-weight: bold;
+			float: right;
+			margin-left: 5px;
+		}
+
+		.active:after {
+			content: "\2212";
+		}
+
+		.panel {
+			padding: 0 18px;
+			background-color: DAE2B6;
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.2s ease-out;
+			box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+		}
+
+		.accordion-box {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+
+		.popular {
+			background: #E8F3D6;
+			margin-bottom: 40px;
+			margin-top: 40px;
+		}
+
+		.cols {
+			width: calc(33.33% - 16px);
+			margin-bottom: 24px;
+		}
+
+		.cols ul li {
+			font-size: 16px;
+
+		}
+
+		.containers {
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 16px;
+		}
+
+		.event-wrap {
+			width: 32% !important;
+			min-height: 147px;
+			height: 100%;
+			justify-content: center;
+			display: flex;
+			align-items: center;
+			background: aliceblue;
+		}
+
+		.event-wrap h3 {
+			text-align: center;
+		}
+
+		h2.headding1::after {
+			display: block;
+			margin-top: 8px;
+			content: '';
+			width: 150px;
+			height: 3px;
+			background: rgb(6, 11, 45);
+			position: absolute;
+			bottom: 0%;
+			left: 50%;
+			text-align: center;
+			transform: translate(-50%, 0);
+		}
+
+		h2.headding2::after {
+			display: block;
+			margin-top: 8px;
+			content: '';
+			width: 70px;
+			height: 3px;
+			background: rgb(6, 11, 45);
+			position: absolute;
+			bottom: 0%;
+			left: 50%;
+			text-align: center;
+			transform: translate(-50%, 0);
+		}
+
+		h2 {
+			position: relative;
+		}
+
+		.jerome {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1111111;
+			font-size: 20px;
+			width: 100%;
+			text-align: center;
+			background-color: #0005;
+		}
+
+		/* Top header background image */
+		@media screen and (max-width: 767px) {
+			.owl-item {
+				height: 420px;
+			}
+		}
+
+		/* Email and mobile width */
+		@media screen and (max-width: 767px) {
+			.top-header .top-header-left {
+				width: 100%;
+				grid-row-gap: 0em;
+			}
+		}
+
+		/* social media header */
+		@media screen and (max-width: 767px) {
+
+			.top-header-right ul,
+			li {
+				margin: -2px;
+				padding: 0;
+				margin-left: -6em;
+				margin-right: -6em;
+				font-size: initial;
+			}
+		}
+
+		@media screen and (max-width: 767px) {
+			.top-header-right .social-list li {
+				margin-right: 14px;
+			}
+		}
+
+		@media screen and (max-width: 767px) {
+			.top-header .top-header-right {
+				margin-left: 1em;
+			}
+		}
+
+		/* login and register */
+		@media screen and (max-width: 767px) {
+			.top-header-right .login-block {
+				margin-right: -8em;
+				margin-left: auto;
+				font-size: 16px;
+			}
+		}
+
+		@media screen and (max-width: 767px) {
+			.cols ul li {
+				font-size: 12px;
+			}
+		}
+
+		@media screen and (max-width: 767px) {
+			.accordion {
+				padding: 2px;
+				font-size: 15px;
+			}
+		}
+
+		@media screen and (max-width: 767px) {
+			.cols {
+				width: calc(31.33% - 9px);
+				margin-bottom: 23px;
+			}
+		}
+
+		@media screen and (max-width: 1199px) {
+			.container {
+				padding-left: 5px;
+				padding-right: 2px;
+			}
+		}
+
+		@media screen and (max-width: 1199px) {
+			.panel ul li {
+				margin: auto;
+			}
+		}
+
+		/* college code */
+		@media screen and (max-width: 767px) {
+			.college a {
+				font-size: 11px;
+			}
+		}
+
+		/* upcoming event */
+		@media screen and (max-width: 767px) {
+
+			.events-section .event-wrap,
+			.upcomming .container .event-wrap {
+				margin-bottom: 16px;
+				width: 100% !important;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			.what-other-say .container .customer-item .border {
+				/* border: 1px solid #fff; */
+				padding: 6px !important;
+			}
+		}
+
+		/* what other say */
+		@media screen and (max-width: 767px) {
+			.what-other-say .container .head::after {
+				left: 32%;
+
+			}
+		}
+
+		@media screen and (max-width: 767px) {
+			.what-other-say .container .customer-item {
+				width: 82%;
+				padding: 0px;
+
+			}
+		}
+
+		/* End what other say */
+
+		/* footer social media */
+		@media screen and (max-width: 767px) {
+			.page-footer .footer-second-section .social-list li {
+				margin-left: -5em;
+				margin-right: -7em;
+				margin: 9px;
+				padding: 0px;
+			}
+		}
+
+		@media screen and (max-width: 767px) {
+			.page-footer .footer-second-section .social-list li:first-child {
+				margin-left: 4px;
+				margin-bottom: 30px;
+			}
+		}
+
+		/* End footer social media */
+		.principal-about {
+			width: 50%;
+			padding-right: 12px;
+		}
+
+		.principal-img {
+			width: 50%;
+
+		}
+
+		/* Top header manu list */
+		@media screen and (max-width: 767px) {
+			.menu-list {
+				display: flex;
+				margin-left: 6em;
+				margin-right: 6em;
+			}
+
+			body {
+				overflow-x: hidden;
+
+			}
+
+			.principal-about {
+				width: 100%;
+				padding: 12px;
+				order: 2;
+			}
+
+			.principal-img {
+				width: 100%;
+
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div id="page" class="site" itemscope itemtype="http://schema.org/LocalBusiness">
+		<header class="site-header">
+			<div class="top-header">
+				<div class="container">
+					<div class="top-header-left">
+						<div style="font-size: 15px;" class="top-header-block">
+							<a itemprop="email"><i class="fas fa-envelope"></i>
+								nemesiaacademy@gmail.com</a>
+						</div>
+						<div style="font-size: 15px;" class="top-header-block">
+							<a itemprop="telephone"><i class="fas fa-phone"></i> +91
+								8546997387</a>
+						</div>
+						<!-- <div style="font-size: 12px;" class="college code">
+							<a href="#"  style="font-family: inherit;">COLLEGE CODE : ST JEROME'S PU COLLEGE(AS0725)<br></a>
+							<a href="#" style="font-family: inherit;" > ST JEROME'S FIRST GRADE COLLEGE(P20GML0210)</a>
+						</div> -->
+						<!-- <div style="font-size: 12px; display: flex;" class="top-header-left">
+							<a itemprop="college code">COLLEGE CODE : ST JEROME'S FIRST GRADE COLLEGE(P20GML0210)</a>
+						</div> -->
+					</div>
+					<div class="top-header-right">
+						<div class="social-block">
+							<ul class="social-list">
+								<li><a href="https://g.co/kgs/4EDAJh" target="_blank"><i
+											class="fab fa-google-plus-g fa-2x"></i></a>
+								</li>
+								<li><a href="https://www.facebook.com/NemesiaAcademy" target="_blank"><i
+											class="fab fa-facebook-square fa-2x"></i></a></li>
+								<li><a href="" target="_blank"><i class="fab fa-youtube fa-2x"></i></a></li>
+								<li><a href="" target="_blank"><i class="fab fa-instagram fa-2x"></i></a></li>
+
+								</li>
+							</ul>
+						</div>
+						<div class="login-block">
+							<a href="login.html">Login /</a>
+							<a href="signup.html">Register</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Top header Close -->
+			<div class="main-header">
+				<div class="container">
+					<div class="logo-wrap" itemprop="logo">
+						<img src="assete/School Logo.png" style="width: 100px;" alt="Logo Image">
+						<!-- <h1>Education</h1> -->
+					</div>
+					<!-- <div style="font-size: 15px;" class="">
+						<a itemprop="college code"></i> COLLEGE CODE : ST JEROME'S PU COLLEGE(AS0725)</a><br>
+						<a itemprop="college code"></i> COLLEGE CODE : ST JEROME'S FIRST GRADE COLLEGE(P20GML0210)</a>
+					</div> -->
+
+					<div class="nav-wrap">
+						<nav class="nav-desktop">
+							<ul class="menu-list">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="about.html">About</a></li>
+								<li><a href="gallery2.html">Gallery</a></li>
+								<!-- <li><a href="Library.html">Library</a></li> -->
+								<li><a href="contact.html">Contact</a></li>
+							</ul>
+						</nav>
+						<div id="bar">
+							<i class="fas fa-bars"></i>
+						</div>
+						<div id="close">
+							<i class="fas fa-times"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- Header Close -->
+		<div class="banner">
+			<div class="jerome">
+				<h1 style="color: #fff;"><b> Welcome To Nemesia Academy</b></h1>
+			</div>
+			<div class="owl-four owl-carousel" itemprop="image">
+				<img src="assete/105.jpg" style="height: 600px;" alt="Image of Bannner">
+				<img src="assete/115.jpg" style="height: 600px;" alt="Image of Bannner">
+				<img src="assete/112.jpg" style="height: 600px;" alt="Image of Bannner">
+			</div>
+			<!-- <marquee behavior="scroll" direction="" style="background-color: #0005;"> -->
+			<!-- <div class="college-name">
+				<h1><b>St.Jerome's College(PU & Degree)</b></h1>
+			</div> -->
+			<!-- </marquee> -->
+			<div id="owl-four-nav" class="owl-nav"></div>
+		</div>
+
+
+		<!-- Learn courses End -->
+
+		<!-- <div class="section pb_70"> -->
+		<div class="container" style="padding-top: 60px;">
+			<!-- <div class="row justify-content-center"> -->
+			<div class="heading_s1 ">
+				<h1>
+					<span id="ContentPlaceHolder1_lbleventhdng" textAlign="left"><b>PRINCIPAL'S MESSAGE</b></span>
+				</h1>
+				<br>
+			</div>
+
+			<div style="display: flex;flex-wrap: wrap;">
+				<div class="principal-about">
+					<p style="font-size: 18px;"><b>Welcome to Nemesia Academy </b>
+					</p>
+					<p style="font-size: 16px;"> “Nemesia Academy is an ICSE School by the Congregation of Sisters of
+						Charity of St.Jeanne Antide Thouret. Since 2014, our congregation has been educating the
+						children in Bangalore. We acknowledge that, this is our first challenging venture in Bangalore
+						to address a good value based moral and disciplined education to the children of our Society.
+						Responding to the need of caring the integral formation of children, with the motto “To educate
+						with Love”,
+						<!-- <a style="text-align: center;" href="file:///C:/edulab/index.html">Read More</a> -->
+					</p>
+				</div>
+				<div class="principal-img">
+					<img src="assete/science exhibition/The Principal-Sr.Soniya Josphin Soc.jpg"
+						alt="">
+				</div>
+			</div>
+		</div>
+		<!-- <section class="popular course">
+			<div class="page-heading">
+				<div class="container">
+					<h2>available courses</h2>
+				</div>
+			</div>
+
+			<div class="learn-courses">
+				<div class="container">
+					<div class="accordion-box" style="padding-bottom: 40px;">
+						<div class="cols">
+							<button class="accordion">HESPsy</button>
+							<div class="panel">
+								<ul style="list-style-type: upper-roman !important;">
+									<li>1. History</li>
+									<li>2. Economics</li>
+									<li>3. Sociology</li>
+									<li>4. Psychology</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="cols">
+							<button class="accordion">PCMC's</button>
+							<div class="panel">
+								<ul style="list-style-type: upper-roman !important;">
+									<li>1. Physics</li>
+									<li>2. Chemistry</li>
+									<li>3. Mathematics</li>
+									<li>4. Computer Science</li>
+								</ul>
+							</div>
+						</div>
+						<div class="cols">
+							<button class="accordion">PCMB</button>
+							<div class="panel">
+								<ul style="list-style-type: upper-roman !important;">
+									<li>1. Physics</li>
+									<li>2. Chemistry</li>
+									<li>3. Mathematics</li>
+									<li>4. Biology</li>
+								</ul>
+							</div>
+						</div>
+						<div class="cols">
+							<button class="accordion">CEBA</button>
+							<div class="panel">
+								<ul style="list-style-type: upper-roman !important;">
+									<li>1. Computer Science</li>
+									<li>2. Economics</li>
+									<li>3. Business Studies</li>
+									<li>4. Accountancy</li>
+								</ul>
+							</div>
+						</div>
+						<div class="cols">
+							<button class="accordion">HEBA</button>
+							<div class="panel">
+								<ul style="list-style-type: upper-roman !important;">
+									<li>1. History</li>
+									<li>2. Economics</li>
+									<li>3. Business Studies</li>
+									<li>4. Accountancy</li>
+								</ul>
+							</div>
+						</div>
+						<div class="cols">
+							<button class="accordion">B.COM</button>
+							<div class="panel">
+								<ul style="list-style-type: upper-roman !important;">
+									<li>Accountancy and Taxation</li>
+									<li></li>
+								</ul>
+							</div>
+						</div>
+						<div class="cols">
+							<button class="accordion">B.A</button>
+							<div class="panel">
+								<ul style="list-style-type: upper-roman !important;">
+									<li>1. English</li>
+									<li>2. Psychology</li>
+									<li>3. History</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section> -->
+		<section class="page-heading">
+			<div class="container">
+				<h2 class="headding1">upcoming events</h2>
+			</div>
+		</section>
+		<section class="events-section" itemprop="event" itemscope itemtype=" http://schema.org/Event">
+			<div class="containers" style="display:flex;flex-wrap: wrap;">
+				<div class="event-wrap">
+					<h3 style="font-size: 18px;"><span style="color:red">19.05.23</span> <br>Coming Soon</h3>
+				</div>
+
+				<div class="event-wrap">
+					<h3 style="font-size: 18px;"><span style="color:red">19.05.23</span> <br> Coming Soon</h3>
+
+				</div>
+
+				<div class="event-wrap">
+					<h3 style="font-size: 18px;"><span style="color:red">19.05.23</span> <br> Coming Soon</h3>
+
+				</div>
+			</div>
+		</section>
+		<!-- End of Events section -->
+		<!-- Closed WhyUs section -->
+		<section class="page-heading">
+			<div class="container">
+				<h2 class="headding2">gallery</h2>
+			</div>
+		</section>
+		<section class="gallery-images-section" itemprop="image" itemscope itemtype=" http://schema.org/ImageGallery">
+			<div class="gallery-img-wrap">
+				<a href="assete/114.jpg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/114.jpg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/125.jpg" style="height: 100%;" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/125.jpg" style="height: 100%;" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/114.jpg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/114.jpg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/104.jpg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/104.jpg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/105.jpg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/105.jpg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/106.jpg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/106.jpg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/107.jpg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/107.jpg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/108.jpg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/108.jpg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/109.jpg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/109.jpg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/131.jpg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/131.jpg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/111.jpg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/111.jpg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/112.jpg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/112.jpg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/111.jpg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/111.jpg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/136.jpg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/136.jpg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/137.jpg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/137.jpg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/128.jpg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/128.jpg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/science exhibition/83.jpeg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/science exhibition/83.jpeg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/science exhibition/84.jpeg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/science exhibition/84.jpeg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/science exhibition/87.jpeg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/science exhibition/87.jpeg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/science exhibition/92.jpeg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/science exhibition/92.jpeg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/science exhibition/93.jpeg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/science exhibition/93.jpeg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/science exhibition/98.jpg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/science exhibition/98.jpg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/science exhibition/99.jpeg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/science exhibition/99.jpeg" alt="gallery-images">
+				</a>
+			</div>
+			<div class="gallery-img-wrap">
+				<a href="assete/science exhibition/95.jpeg" data-lightbox="example-set"
+					data-title="Click the right half of the image to move forward.">
+					<img src="assete/science exhibition/95.jpeg" alt="gallery-images">
+				</a>
+			</div>
+		</section>
+		<!-- End of gallery Images -->
+
+		<section class="what-other-say">
+			<div class="container">
+				<h4 class="article-subtitle">Get to Know</h4>
+				<h2 class="head">what our students & Parents say</h2>
+				<div class="three owl-carousel owl-theme">
+					<div class="customer-item" itemscope itemtype="http://schema.org/Rating">
+						<div class="border">
+							<div class="customer">
+								<figure>
+									<img class="customer-img"
+										src="https://storage.googleapis.com/cstack-website-storage/Joice_Britto22_a84f7998e7/Joice_Britto22_a84f7998e7.jpg?updated_at=2023-02-24T06:39:20.909Z"
+										alt="Person image">
+									<figcaption>
+										<span itemprop="author">Joicy Britto</span>
+										<div class="rateYo" itemprop="ratingValue"></div>
+									</figcaption>
+								</figure>
+							</div>
+							<div class="customer-review">
+								<p itemprop="description">
+									"It was good to know about the changes that were made in the college in the recent
+									years. The management seemed to work at its
+									best and improve every now and then, to empower the students joining here.
+									A student friendly atmosphere, good infrastructure."
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="customer-item" itemscope itemtype="http://schema.org/Rating">
+						<div class="border">
+							<div class="customer">
+								<figure>
+									<img class="customer-img"
+										src="https://storage.googleapis.com/cstack-website-storage/Hemanth_11cfdc6fc4/Hemanth_11cfdc6fc4.jpg?updated_at=2023-02-24T06:39:34.075Z"
+										alt="Person image">
+									<figcaption>
+										<span itemprop="author">Hemanth 1818</span>
+										<div class="rateYo" itemprop="ratingValue"></div>
+									</figcaption>
+								</figure>
+							</div>
+							<div class="customer-review">
+								<p itemprop="description">
+									" The college management staffs giving more opportunities to students, to show their
+									talents and making them to shine. Teachers adopting various new methods for
+									teaching. Have collaborative learning. Providing eco-friendly Atmosphere for
+									Learning."
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="customer-item" itemscope itemtype="http://schema.org/Rating">
+						<div class="border">
+							<div class="customer">
+								<figure>
+									<img class="customer-img"
+										src="https://storage.googleapis.com/cstack-website-storage/Arocia_charles_257d3fb15f/Arocia_charles_257d3fb15f.jpg?updated_at=2023-02-24T06:39:22.203Z"
+										alt="Person image">
+									<figcaption>
+										<span itemprop="author">Arockiya Charles</span>
+										<div class="rateYo" itemprop="ratingValue"></div>
+									</figcaption>
+								</figure>
+							</div>
+							<div class="customer-review">
+								<p itemprop="description">
+									" I like this college as they more concern about students and wonderful
+									infrastructure.
+									Fees structur also very less. I can see lot of achievment from this college students
+									recent days."
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="customer-item" itemscope itemtype="http://schema.org/Rating">
+						<div class="border">
+							<div class="customer">
+								<figure>
+									<img class="customer-img"
+										src="https://storage.googleapis.com/cstack-website-storage/Dimple22_45acebf107/Dimple22_45acebf107.jpg?updated_at=2023-02-24T06:39:21.425Z"
+										alt="Person image">
+									<figcaption>
+										<span itemprop="author">Dimple Sharon john</span>
+										<div class="rateYo" itemprop="ratingValue"></div>
+									</figcaption>
+								</figure>
+							</div>
+							<div class="customer-review">
+								<p itemprop="description">
+									" There is good infrastructure nd great facilities.....it's getting developed day by
+									day.....
+									we have cool principal..who is working more nd more for the college....even it is a
+									small campus.. it is a campus of discipline.."
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="customer-item" itemscope itemtype="http://schema.org/Rating">
+						<div class="border">
+							<div class="customer">
+								<figure>
+									<img class="customer-img"
+										src="https://storage.googleapis.com/cstack-website-storage/Arun_Kumar22_04112658a0/Arun_Kumar22_04112658a0.jpg?updated_at=2023-02-24T06:39:19.909Z"
+										alt="Person image">
+									<figcaption>
+										<span itemprop="author">Arun Kumar</span>
+										<div class="rateYo" itemprop="ratingValue"></div>
+									</figcaption>
+								</figure>
+							</div>
+							<div class="customer-review">
+								<p itemprop="description">
+									" I am previlaged to study in this college, the talented and stuff and eco-friendly
+									cmapus is the best, college is everyone is given voice and chance to explore their
+									skills and talent."
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End of Others talk -->
+		<!-- Latest News CLosed -->
+		<section class="query-section">
+			<div class="container">
+				<p>Any Queries? Ask us a question at<a href=""><i class="fas fa-phone"></i> +91 8546997387</a></p>
+			</div>
+		</section>
+		<!-- End of Query Section -->
+		<footer class="page-footer" itemprop="footer" itemscope itemtype="http://schema.org/WPFooter">
+			<div class="footer-first-section">
+				<div class="container">
+					<div class="box-wrap" itemprop="about">
+						<header>
+							<h1>about</h1>
+						</header>
+						<p> Empowering children to unlock their potential and thrive through personalized learning and a
+							nurturing environment.
+						<h4><i class="fas fa-phone"></i> +91 8546997387</a></h4>
+						<h4><i class="fas fa-envelope"></i>
+							nemesiaacademy@gmail.com</a></h4>
+						<h4><a href="https://goo.gl/maps/JR352Zzmq4dfiBDd8"><i class="fas fa-map-marker-alt"></i>Nemesia
+								Academy Affiliated to CISCE, Delhi Code: KA438
+								Harohalli village, Huskur post, Anekal Taluk Bangalore-560099</a></h4>
+					</div>
+
+					<div class="box-wrap">
+						<header>
+							<h1>links</h1>
+						</header>
+						<ul>
+							<a href="https://g.co/kgs/4EDAJh" target="_blank" style="font-size: 16px;"><i
+									class="fab fa-google-plus-g"></i> google</a><br><br>
+							<a href="https://www.facebook.com/NemesiaAcademy" target="_blank"
+								style="font-size: 16px;"><i class="fab fa-facebook-square"></i> facebook</a><br><br>
+							<a href="" target="_blank" style="font-size: 16px;"><i class="fab fa-youtube"></i>
+								youtube</a><br>
+							<br>
+
+							</li>
+							<a href="" target="_blank" style="font-size: 16px;"><i class="fab fa-instagram"></i>
+								instagram</a></li>
+							<!-- <li><a href="principal725@gm">Principal</a></li> -->
+							<!-- <li><a href="https://www.facebook.com/stjeromescollege/" target="_blank">facebook</a></li>
+							<li><a href="https://www.youtube.com/channel/UCaKIkFMvROWbe__J9ryPETA?app=desktop"
+									target="_blank">youtube</a>
+							</li>
+							<li><a href="https://twitter.com/home" target="_blank">twitter</a></li> -->
+
+						</ul>
+					</div>
+
+					<div class="box-wrap">
+						<header>
+							<h1>quick contact</h1>
+						</header>
+						<section class="quick-contact">
+							<input type="email_id" name="email" placeholder="Your Email*">
+							<textarea placeholder="Type your message*"></textarea>
+							<button>send message</button>
+						</section>
+					</div>
+
+				</div>
+			</div>
+			<!-- End of box-Wrap -->
+			<div class="footer-second-section">
+				<div class="container">
+					<hr class="footer-line">
+					<ul class="social-list">
+						<li><a href="https://g.co/kgs/4EDAJh" target="_blank"><i class="fab fa-google-plus-g"></i></a>
+						</li>
+						<li><a href="https://www.facebook.com/NemesiaAcademy" target="_blank"><i
+									class="fab fa-facebook-square"></i></a></li>
+						<!-- <li><a href="https://twitter.com/home" target="_blank"><i class="fab fa-twitter"></i></a></li>
+						<li><a href="https://www.skype.com/en/" target="_blank"><i class="fab fa-skype"></i></a></li> -->
+						<li><a href="" target="_blank"><i class="fab fa-youtube"></i></a></li>
+						<li><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
+					</ul>
+					<hr class="footer-line">
+				</div>
+			</div>
+			<div class="footer-last-section">
+				<div class="container">
+					<!-- <p>Copyright 2018 &copy; educationpro.com <span> | </span> Theme designed and developed by <a href="https://labtheme.com">Lab Theme</a></p> -->
+					<p class="mt-2">Copyright © 2023 NEMESIA ACADEMY <br> Maintained by
+						Technodreams Advanced Systems Private Limited<a href="https://www.integro.co.in/"
+							target="_blank" style="margin-left: 0px;"></a></p>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/lightbox.js"></script>
+	<script type="text/javascript" src="js/all.js"></script>
+	<script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+	<script type="text/javascript" src="js/owl.carousel.js"></script>
+	<script type="text/javascript" src="js/jquery.flexslider.js"></script>
+	<script type="text/javascript" src="js/jquery.rateyo.js"></script>
+	<!-- <script type="text/javascript" src="js/jquery.mmenu.all.js"></script> -->
+	<!-- <script type="text/javascript" src="js/jquery.meanmenu.min.js"></script> -->
+	<script type="text/javascript" src="js/custom.js"></script>
+	<script>
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+			acc[i].addEventListener("click", function () {
+				this.classList.toggle("active");
+				var panel = this.nextElementSibling;
+				if (panel.style.maxHeight) {
+					panel.style.maxHeight = null;
+				} else {
+					panel.style.maxHeight = panel.scrollHeight + "px";
+				}
+			});
+		}
+	</script>
+</body>
+
+</html>
