@@ -541,12 +541,13 @@ img {
 	max-width: 100%;
 	/* Adhere to container width. */
 	margin: -2px;
-	margin-top: -20px;
+	margin-top: -28px;
 	margin-bottom: -30px;
 }
 
 figure {
 	margin: 0;
+	background-color:  #616161;
 	/* Extra wide images within figure tags don't overflow the content area. */
 }
 
@@ -683,7 +684,8 @@ a:active {
 
 .top-header {
 	/*background: #1c3961;*/
-	background: #8c0619;
+	/* background: #8c0619; */
+	background: linear-gradient(to right, #8c0619, #1c3961);
 }
 
 .top-header a {
@@ -750,8 +752,6 @@ li {
 	flex: 1;
 	flex-flow: row wrap;
 	justify-content: space-between;
-	padding-top: 1.375em;
-	padding-bottom: 1.375em;
 }
 
 .main-header .containers {
@@ -3631,7 +3631,7 @@ RESPONSIVE STYLESHEET
 
 .what-other-say .container .customer-item {
 	width: 83%;
-	background: #000;
+	background: #00695c;
 	margin-right: auto;
 	margin-left: auto;
 	padding: 35px;
@@ -3641,6 +3641,7 @@ RESPONSIVE STYLESHEET
 .what-other-say .container .customer-item .border {
 	border: 1px solid #fff;
 	padding: 34px 65px 45px 65px;
+	background-color: #37474F;
 }
 
 .what-other-say .container .customer-item .customer-img,
@@ -3701,7 +3702,7 @@ marquee {
 	transform: translate(-50%, -50%);
 	z-index: 1;
 	font-size: 36px;
-	background: #000;
+	background: aliceblue;
 }
 
 marquee h1 {
