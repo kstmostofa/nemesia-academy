@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .c_container {
+            width: 100%;
+            position: relative;
+        }
+
+        .c_row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .c_col {
+            width: 33.3%;
+            padding: 8px;
+        }
+
+        .c_header {
+            width: 100%;
+            padding: 4px 8px;
+            font-size: 18px;
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            /* background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%); */
+            background-image: linear-gradient(120deg, #fa84ca 0%, #f4ec8f 100%);
+        }
+
+        .c_body {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 4px 8px;
+            width: 100%;
+            background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .c_body ul {
+            width: 100%;
+        }
+
+        .c_body ul li {
+            padding: 4px 0;
+            border-bottom: 1px solid #0001;
+        }
+
+        .c_new {
+            margin-right: 12px;
+            padding: 3px 12px;
+            background-color: red;
+            position: relative;
+            animation-name: colorchange;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            border-radius: 50%;
+        }
+
+        @keyframes colorchange {
+            0% {
+                background-color: red;
+                color: #fff;
+            }
+
+            25% {
+                background-color: #fff;
+                color: red;
+            }
+
+            50% {
+                background-color: red;
+                color: #fff;
+            }
+
+            75% {
+                color: red;
+                background-color: #fff;
+            }
+
+            100% {
+                background-color: red;
+                color: #fff;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .c_col {
+                width: 50%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .c_col {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="c_container">
+
+        <div class="c_row">
+            <div class="c_col">
+                <div class="c_header">
+                    News and Event
+                    <marquee behavior="smoth" direction="up">
+                </div>
+                <div class="c_body">
+                    <ul>
+                        <li><span class="c_new">New</span>coming soon</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                    </ul>
+                    </marquee>
+                </div>
+            </div>
+            <div class="c_col">
+                <div class="c_header">
+                    Academic Notification
+                    <marquee behavior="smoth" direction="up">
+
+                </div>
+                <div class="c_body">
+                    <ul>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                    </ul>
+                    </marquee>
+                </div>
+            </div>
+            <div class="c_col">
+                <div class="c_header">
+                    Examination Notification
+                    <marquee behavior="smoth" direction="up">
+
+                </div>
+                <div class="c_body">
+                    <ul>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                        <li><span class="c_new">New</span>Body-text</li>
+                    </ul>
+                    </marquee>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
